@@ -75,7 +75,7 @@ public Action Cmd_ItemStuffPvP(int args) {
 	if( Math_GetRandomInt(1, 4) == 4 )
 		ItemRand[amount++] = 126;	// Drapeau	
 	
-	ItemRand[amount++] = 238;	// AWP
+	ItemRand[amount++] = 238;	// AWP 
 	ItemRand[amount++] = 22;	// San-Andreas
 	ItemRand[amount++] = 46;	// Incendiaire
 	ItemRand[amount++] = 66;	// Sucette Duo
@@ -89,12 +89,22 @@ public Action Cmd_ItemStuffPvP(int args) {
 	ItemRand[amount++] = 285;	// Bouclier Anti-émeute
 	ItemRand[amount++] = 296;	// Paire de baskets
 	ItemRand[amount++] = 53;	// Amelioration précision de tir
+	ItemRand[amount++] = 48;	// Fusée
+	ItemRand[amount++] = 89;	// Propulseur
 	
 	int item_id = ItemRand[ Math_GetRandomInt(0, amount-1) ];
 	rp_ClientGiveItem(client, item_id);
 	if( item_id == 35 )
 		rp_ClientGiveItem(client, item_id, 4);
 	
+	rp_ClientGiveItem(client, item_id);
+	if( item_id == 48 )
+		rp_ClientGiveItem(client, item_id, 9);
+		
+	rp_ClientGiveItem(client, item_id);
+	if( item_id == 89 )
+		rp_ClientGiveItem(client, item_id, 9);
+		
 	if( (luck || Math_GetRandomInt(1, 100) > 90) && (item_id == 6 || item_id == 64 || item_id == 114 || item_id == 236 || item_id == 239) )
 		rp_ClientGiveItem(client, item_id);
 	
